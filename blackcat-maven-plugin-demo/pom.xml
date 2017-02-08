@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
             <artifactId>blackcat-instrument</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.6</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -40,7 +40,7 @@
             <plugin>
                 <groupId>com.github.bingoohuang</groupId>
                 <artifactId>blackcat-maven-plugin</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>0.0.7</version>
                 <executions>
                     <execution>
                         <phase>process-classes</phase>
