@@ -1,10 +1,8 @@
 package com.github.bingoohuang.blackcat.maven.demo;
 
-
 import com.github.bingoohuang.blackcat.instrument.annotations.BlackcatMonitor;
 import com.github.bingoohuang.blackcat.instrument.callback.Blackcat;
 
-@BlackcatMonitor(debug = true)
 public class Demo {
     public void printCustom() {
         Blackcat cat = new Blackcat();
@@ -22,6 +20,7 @@ public class Demo {
     public void printCustomLog(String thing) {
         Blackcat.log("give me some {}", thing);
     }
+
     @BlackcatMonitor
     public void printOne() {
         String s = "Hello World";

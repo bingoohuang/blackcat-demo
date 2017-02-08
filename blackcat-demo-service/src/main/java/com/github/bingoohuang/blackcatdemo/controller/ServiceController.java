@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.UUID;
 
 @RestController
-@BlackcatMonitor(debug = true)
+@BlackcatMonitor
 public class ServiceController {
     @Autowired DemoDao demoDao;
 

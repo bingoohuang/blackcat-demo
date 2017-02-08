@@ -5,7 +5,7 @@
 
     <groupId>com.github.bingoohuang</groupId>
     <artifactId>blackcat-demo-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>blackcat demo web</name>
