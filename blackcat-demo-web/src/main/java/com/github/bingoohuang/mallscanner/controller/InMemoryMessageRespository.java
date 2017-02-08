@@ -1,4 +1,4 @@
-package com.github.bingoohuang.springbootbank.demo;
+package com.github.bingoohuang.mallscanner.controller;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

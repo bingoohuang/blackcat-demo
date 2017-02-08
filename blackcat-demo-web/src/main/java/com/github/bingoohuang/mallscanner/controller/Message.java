@@ -1,4 +1,4 @@
-package com.github.bingoohuang.springbootbank.demo;
+package com.github.bingoohuang.mallscanner.controller;
 
 import org.hibernate.validator.constraints.NotEmpty;
 

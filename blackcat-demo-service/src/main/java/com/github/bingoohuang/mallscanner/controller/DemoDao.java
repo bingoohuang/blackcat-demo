@@ -1,4 +1,4 @@
-package com.github.bingoohuang.springbootbank.demo;
+package com.github.bingoohuang.mallscanner.controller;
 
 import org.n3r.eql.eqler.annotations.Eqler;
 import org.n3r.eql.eqler.annotations.Sql;

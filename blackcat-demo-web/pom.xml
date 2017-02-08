@@ -10,7 +10,6 @@
 
     <name>blackcat demo web</name>
 
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -21,20 +20,25 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>com.github.bingoohuang.springbootbank.Application</start-class>
+        <start-class>com.github.bingoohuang.blackcatdemo.Application</start-class>
         <java.version>1.7</java.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.github.bingoohuang</groupId>
-            <artifactId>spring-rest-client</artifactId>
-            <version>0.0.14-SNAPSHOT</version>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
-            <artifactId>blackcat-javaagent</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>spring-rest-client</artifactId>
+            <version>0.0.17</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bingoohuang</groupId>
+            <artifactId>blackcat-instrument</artifactId>
+            <version>0.0.6</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -42,11 +46,17 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,8 +84,7 @@
             <plugin>
                 <groupId>com.github.bingoohuang</groupId>
                 <artifactId>blackcat-maven-plugin</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-
+                <version>0.0.7</version>
                 <executions>
                     <execution>
                         <phase>process-classes</phase>
@@ -95,7 +104,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
                 <configuration>
-                    <mainClass>com.github.bingoohuang.springbootbank.Application</mainClass>
+                    <mainClass>com.github.bingoohuang.blackcatdemo.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>

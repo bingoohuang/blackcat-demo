@@ -1,4 +1,4 @@
-package com.github.bingoohuang.springbootbank.demo;
+package com.github.bingoohuang.mallscanner.controller;
 
 import com.github.bingoohuang.springrestclient.annotations.SpringRestClientEnabled;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
-package com.github.bingoohuang.springbootbank.demo;
+package com.github.bingoohuang.blackcatdemo.controller;
 
-import com.github.bingoohuang.blackcat.javaagent.annotations.BlackcatCreateTransformedClassFile;
-import com.github.bingoohuang.blackcat.javaagent.callback.Blackcat;
+import com.github.bingoohuang.blackcat.instrument.annotations.BlackcatMonitor;
+import com.github.bingoohuang.blackcat.instrument.callback.Blackcat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,20 +13,20 @@ import javax.validation.Valid;
 import java.util.Random;
 
 @Controller
-@BlackcatCreateTransformedClassFile
+//@BlackcatMonitor(debug = true)
 public class MessageController {
-    private final MessageRepository messageRepository;
-
-    @Autowired
-    public MessageController(MessageRepository messageRepository) {
-        this.messageRepository = messageRepository;
-    }
+    @Autowired InMemoryMessageRespository messageRepository;
 
     @RequestMapping("/")
     public ModelAndView list() {
         System.err.println("Nano:" + System.currentTimeMillis());
         Iterable<Message> messages = this.messageRepository.findAll();
         return new ModelAndView("messages/list", "messages", messages);
+    }
+
+    @RequestMapping("/fuck")
+    public String fuck() {
+        throw new RuntimeException("bingoo testing");
     }
 
     @RequestMapping("/hello")
@@ -61,14 +61,31 @@ public class MessageController {
     @RequestMapping("/rest")
     public String rest() throws InterruptedException {
         Blackcat.log("step1");
-//        Random random = new Random();
-//        Thread.sleep(random.nextInt(1000));
+        step1();
+        step2();
+        step3();
+        Random random = new Random();
+        Thread.sleep(random.nextInt(200));
         Blackcat.log("步骤2");
-//        Thread.sleep(random.nextInt(1000));
+        Thread.sleep(random.nextInt(200));
         Blackcat.log("step3, 调用接口");
         demoService.service();
 
         return "rest response body";
+    }
+
+    @BlackcatMonitor
+    private void step3() {
+    }
+
+    @BlackcatMonitor
+    private void step2() {
+
+    }
+
+    @BlackcatMonitor
+    private void step1() {
+
     }
 
     @RequestMapping("/foo")
