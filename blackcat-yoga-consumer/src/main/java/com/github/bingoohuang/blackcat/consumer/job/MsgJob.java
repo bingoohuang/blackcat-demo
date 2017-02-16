@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author bingoohuang [bingoohuang@gmail.com] Created on 2017/1/19.
  */
-@Component
+// @Component
 public class MsgJob extends AbstractMsgJob {
     @Override protected String getCron() {
         return new Miner().getStone("blackcat", "cron.schedule",

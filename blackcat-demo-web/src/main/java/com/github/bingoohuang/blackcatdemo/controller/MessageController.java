@@ -25,6 +25,7 @@ public class MessageController {
     }
 
     @RequestMapping("/fuck")
+    @BlackcatMonitor
     public String fuck() {
         throw new RuntimeException("bingoo testing");
     }
@@ -60,7 +61,10 @@ public class MessageController {
     @ResponseBody
     @RequestMapping("/rest")
     public String rest() throws InterruptedException {
+        long start = System.currentTimeMillis();
         Blackcat.log("step1");
+        long end = System.currentTimeMillis();
+        System.out.println("step1:" + (end - start));
         step1();
         step2();
         step3();

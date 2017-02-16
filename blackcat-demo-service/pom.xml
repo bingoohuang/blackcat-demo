@@ -38,12 +38,12 @@
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
             <artifactId>eql</artifactId>
-            <version>0.0.76</version>
+            <version>0.0.81</version>
         </dependency>
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
             <artifactId>blackcat-instrument</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.9</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
