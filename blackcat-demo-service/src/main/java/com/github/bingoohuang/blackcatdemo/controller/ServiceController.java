@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import java.util.Random;
 import java.util.UUID;
 
@@ -13,6 +14,11 @@ import java.util.UUID;
 @BlackcatMonitor
 public class ServiceController {
     @Autowired DemoDao demoDao;
+
+    @PostConstruct
+    public void postConstruct() {
+        demoDao.createTable();
+    }
 
     @RequestMapping("/service")
     public String service() throws InterruptedException {

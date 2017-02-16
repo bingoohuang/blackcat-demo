@@ -37,6 +37,11 @@
         </dependency>
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
+            <artifactId>blackcat-sdk</artifactId>
+            <version>0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bingoohuang</groupId>
             <artifactId>blackcat-instrument</artifactId>
             <version>0.0.9</version>
         </dependency>

@@ -31,14 +31,19 @@
             <version>20.0</version>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.24</version>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.193</version>
         </dependency>
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
             <artifactId>eql</artifactId>
             <version>0.0.81</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bingoohuang</groupId>
+            <artifactId>blackcat-sdk</artifactId>
+            <version>0.0.6</version>
         </dependency>
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
