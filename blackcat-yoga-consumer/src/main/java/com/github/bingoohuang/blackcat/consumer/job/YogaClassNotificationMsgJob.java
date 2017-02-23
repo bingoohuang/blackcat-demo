@@ -22,7 +22,7 @@ import static org.quartz.CronScheduleBuilder.cronSchedule;
 import static org.quartz.JobBuilder.newJob;
 import static org.quartz.TriggerBuilder.newTrigger;
 
-//@Component
+@Component
 public class YogaClassNotificationMsgJob implements BlackcatJob {
     @Autowired MsgService msgService;
     @Autowired Redis redis;

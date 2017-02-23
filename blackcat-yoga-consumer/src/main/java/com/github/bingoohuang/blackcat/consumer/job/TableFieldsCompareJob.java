@@ -29,7 +29,7 @@ import static org.quartz.TriggerBuilder.newTrigger;
 2) Diamond配置检查的排程CRON表达式（可选，默认0 10 08,14,17 1/1 * ?): blackcat^tablefieldscheck.schedule
  */
 
-@Slf4j //@Component
+@Slf4j @Component
 public class TableFieldsCompareJob implements BlackcatJob {
     @Autowired MsgService msgService;
     @Autowired FieldsChecker fieldsChecker;

@@ -33,8 +33,10 @@ public class DiamondPlaceholderConfigurer
     public static class MapInvocationHandler implements InvocationHandler {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            boolean isGet = method.getName().equals("get");
-            return isGet ? readDiamond((String) args[0]) : method.invoke(this, args);
+            val isGet = method.getName().equals("get");
+            return isGet
+                    ? readDiamond((String) args[0])
+                    : method.invoke(this, args);
         }
     }
 }

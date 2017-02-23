@@ -24,7 +24,7 @@ public class SchemaTableColumnMapper implements EqlRowMapper {
         val columnType = rs.getString(5);
         val isNullable = rs.getString(6);
 
-        if (stdTableName == null || !stdTableName.equals(tableName)) {
+        if (!tableName.equals(stdTableName)) {
             tableColumns = new ArrayList<>();
             stdTableName = tableName;
             stdFieldsCache.put(stdTableName, tableColumns);

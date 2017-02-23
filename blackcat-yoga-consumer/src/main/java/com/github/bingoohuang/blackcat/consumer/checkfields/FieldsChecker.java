@@ -25,7 +25,7 @@ public class FieldsChecker {
         }
 
         val regex = new Miner().getStone("blackcat",
-                "ignored.tablename.regex", ".*bac?k");
+                "ignored.tablename.regex", "_bac?k\\d*$");
         val tableNameIgnorePattern = Pattern.compile(regex);
 
         val stdSchema = getStdSchema(allSchemas);
@@ -57,7 +57,7 @@ public class FieldsChecker {
 
     private List<String> filterOutBakTables(String cmpSchema, Pattern pattern) {
         return infoSchemaDao.selectTables(cmpSchema).stream().filter(
-                tableName -> !pattern.matcher(tableName.toLowerCase()).matches())
+                tableName -> !pattern.matcher(tableName.toLowerCase()).find())
                 .collect(Collectors.toList());
     }
 }

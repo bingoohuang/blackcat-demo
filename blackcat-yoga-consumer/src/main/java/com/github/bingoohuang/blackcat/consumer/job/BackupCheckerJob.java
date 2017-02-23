@@ -20,7 +20,7 @@ import static org.quartz.CronScheduleBuilder.cronSchedule;
 import static org.quartz.JobBuilder.newJob;
 import static org.quartz.TriggerBuilder.newTrigger;
 
-//@Component
+@Component
 public class BackupCheckerJob implements BlackcatJob {
     @Autowired MsgService msgService;
 
@@ -44,8 +44,8 @@ public class BackupCheckerJob implements BlackcatJob {
         val errLogPath = urlPrefix + today + "/err.log";
         val result = new HttpReq(errLogPath).get();
         return "OK".equals(result)
-                ? "南方中心数据备份成功!"
-                : "备份中心数据备份异常,详情请查看备份目录:err.log";
+                ? "南方中心备份成功!"
+                : "备份中心备份异常,详情请查看备份目录err.log";
     }
 
     public static class BackupRemindJop implements Job {
