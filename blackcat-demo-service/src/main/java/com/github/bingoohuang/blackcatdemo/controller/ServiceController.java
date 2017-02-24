@@ -24,9 +24,9 @@ public class ServiceController {
     public String service() throws InterruptedException {
         Blackcat.log("service 步骤1");
         Random random = new Random();
-        Thread.sleep(random.nextInt(500));
+        Thread.sleep(random.nextInt(200));
         Blackcat.log("service 步骤2");
-        Thread.sleep(random.nextInt(500));
+        Thread.sleep(random.nextInt(200));
         demoDao.demo(UUID.randomUUID().toString(), Blackcat.currentTraceId());
         return "service response body";
     }

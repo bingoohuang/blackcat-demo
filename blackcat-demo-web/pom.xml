@@ -43,7 +43,7 @@
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
             <artifactId>blackcat-instrument</artifactId>
-            <version>0.0.9</version>
+            <version>0.0.10</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

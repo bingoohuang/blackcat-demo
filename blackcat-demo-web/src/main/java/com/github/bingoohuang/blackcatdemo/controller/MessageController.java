@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
 import java.util.Random;
 
 @Controller
@@ -46,7 +45,7 @@ public class MessageController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ModelAndView create(@Valid Message message, BindingResult result,
+    public ModelAndView create(Message message, BindingResult result,
                                RedirectAttributes redirect) {
         if (result.hasErrors()) {
             return new ModelAndView("messages/form", "formErrors", result.getAllErrors());
