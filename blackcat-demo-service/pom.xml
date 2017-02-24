@@ -51,6 +51,18 @@
             <version>0.0.10</version>
         </dependency>
         <dependency>
+            <groupId>com.github.bingoohuang</groupId>
+            <artifactId>logback-more-appenders</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.14</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
         </dependency>
