@@ -30,7 +30,7 @@ public class SpringConfig {
 
     @Bean
     public Redis redis() {
-        RedisConfig redisConfig = new RedisConfig();
+        val redisConfig = new RedisConfig();
         redisConfig.setHost("127.0.0.1");
         redisConfig.setPort(6379);
         return new Redis(redisConfig);

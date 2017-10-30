@@ -30,13 +30,13 @@ public class BlackcatMethodRuntimeTopn implements BlackcatReqListener {
         if (zscore != null && zscore >= req.rt.getCostNano()) return;
 
         val miner = new Miner().getMiner("blackcat", "consumer");
-        int topn = miner.getInt("topn", 10);
+        val topn = miner.getInt("topn", 10);
         redis.topn(key, req.rt.getCostNano(), member, topn);
     }
 
     private String findMethodPackagePrefix(BlackcatMethodRuntimeReq req) {
-        String className = req.getRt().getClassName();
-        for (String prefix : configBean.getMethodPkgPrefixes()) {
+        val className = req.getRt().getClassName();
+        for (val prefix : configBean.getMethodPkgPrefixes()) {
             if (className.startsWith(prefix)) return prefix;
         }
 

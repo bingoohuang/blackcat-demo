@@ -54,7 +54,7 @@ public class WxMsgService implements MsgService {
     public void sendMsg(String title, String detail) {
         val miner = new Miner().getMiner("blackcat", "area");
         val area = miner.getString("area");
-        Text text = Text.builder().content(area + "监控:\n" + title + "\n"
+        val text = Text.builder().content(area + "监控:\n" + title + "\n"
                 + detail + "\nat " + now()).build();
         sendBlackCatMsg(text);
     }
