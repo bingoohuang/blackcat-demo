@@ -51,7 +51,7 @@
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
             <artifactId>eql</artifactId>
-            <version>0.0.86</version>
+            <version>0.0.87</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>com.github.bingoohuang</groupId>
             <artifactId>westcache</artifactId>
-            <version>0.0.16</version>
+            <version>0.0.23</version>
         </dependency>
         <dependency>
             <groupId>redis.clients</groupId>

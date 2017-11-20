@@ -4,15 +4,15 @@ import com.github.bingoohuang.blackcat.consumer.wx.WxMsgService;
 import com.github.bingoohuang.blackcat.server.BlackServerEnabled;
 import com.github.bingoohuang.blackcat.server.base.MsgService;
 import com.github.bingoohuang.springrestclient.spring.SpringRestClientEnabledScan;
-import com.github.bingoohuang.utils.redis.Redis;
-import com.github.bingoohuang.utils.redis.RedisConfig;
 import com.github.bingoohuang.westcache.spring.WestCacheableEnabled;
+import com.github.bingoohuang.westcache.utils.Redis;
 import lombok.val;
 import org.n3r.eql.eqler.spring.EqlerScan;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import redis.clients.jedis.JedisCommands;
 
 @Configuration
 @ComponentScan
@@ -29,11 +29,8 @@ public class SpringConfig {
     }
 
     @Bean
-    public Redis redis() {
-        val redisConfig = new RedisConfig();
-        redisConfig.setHost("127.0.0.1");
-        redisConfig.setPort(6379);
-        return new Redis(redisConfig);
+    public JedisCommands redis() {
+        return Redis.createJedisCommands("127.0.0.1", 8051, 3);
     }
 
     @Bean
