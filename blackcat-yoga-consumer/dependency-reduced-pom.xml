@@ -4,7 +4,7 @@
   <groupId>com.github.bingoohuang</groupId>
   <artifactId>blackcat-yoga-consumer</artifactId>
   <name>blackcat-yoga-consumer</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>consumer that monitor a machine's memory, cpu, processes and etc.</description>
   <build>
     <plugins>
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.10</version>
+      <version>1.16.18</version>
       <scope>provided</scope>
       <optional>true</optional>
     </dependency>
